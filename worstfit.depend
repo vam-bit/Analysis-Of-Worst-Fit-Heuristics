@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1650626355 source:c:\users\vamsi\documents\project-dsa\worstfit\main.c
+	<stdio.h>
+	<conio.h>
+
+1650965133 source:c:\users\vamsi\documents\project-dsa\worstfit\worstfitdec.c
+	<stdio.h>
+	<conio.h>
+

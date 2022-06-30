@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<conio.h>
+#define max 25
+void main()
+{int frag[max],b[max],f[max],i,j,nb,nf,temp,highest=0;
+static int bf[max],ff[max];
+
+printf("\n\tWorst Fit Decreasing");
+printf("\nEnter the number of blocks:"); scanf("%d",&nb);
+printf("Enter the number of files:"); scanf("%d",&nf); printf("\nEnter the size of theblocks:-\n");
+for(i=1;i<=nb;i++)
+{ printf("Block %d:",i); scanf("%d",&b[i]);
+
+}
+printf("Enter the size of the files :-\n");
+for(i=1;i<=nf;i++)
+{ printf("File %d:",i); scanf("%d",&f[i]);
+
+}
+for(i=1;i<=nf;i++)
+{ for(j=i+1;j<nf+1;j++)
+{ if(f[i]<f[j])
+{ temp=f[i]; f[i]=f[j]; f[j]=temp
+;
+}
+} } for(i=1;i<=nf;i++) { for(j=i;j<=nb;j++)
+{ if(bf[j]!=1) //if bf[j] is not allocated
+{ temp=b[j]-f[i]; if(temp>=0) if(highest<temp
+)
+{ ff[i]=j;
+highest=temp;
+
+}
+}
+} frag[i]=highest; bf[ff[i]]=1; highest=0;
+
+}
+printf("\nFile_no:\tFile_size\tBlock_no:\tBlock_size\tFragment"); for(i=1;i<=nf;i++)
+printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d",i,f[i],ff[i],b[ff[i]],frag[i]); getch();
+}

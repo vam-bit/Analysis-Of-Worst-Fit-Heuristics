@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1650965510 source:c:\users\vamsi\documents\project-dsa\almostworstfit\main.c
+	<stdio.h>
+	<conio.h>
+
